@@ -15,4 +15,6 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::apiResource('products', 'App\Http\Controllers\ProductController');
+Route::apiResource('products', ProductController::class);
+
+Route::get('products/category/{category}', [ProductController::class, 'indexCategory']);

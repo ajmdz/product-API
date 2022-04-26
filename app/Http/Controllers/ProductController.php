@@ -20,6 +20,12 @@ class ProductController extends Controller
         return ProductResource::collection(Product::all());
     }
 
+    public function indexCategory($category)
+    {
+        return ProductResource::collection(Product::where('category', $category)
+                                                ->get());
+    }
+
     /**
      * Show the form for creating a new resource.
      *
